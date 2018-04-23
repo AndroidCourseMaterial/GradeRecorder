@@ -45,6 +45,7 @@ import edu.rosehulman.graderecorderfirebase.models.Course;
 import edu.rosehulman.graderecorderfirebase.models.Owner;
 import edu.rosehulman.graderecorderfirebase.utils.SharedPreferencesUtils;
 import edu.rosehulman.graderecorderfirebase.utils.Utils;
+
 import edu.rosehulman.rosefire.Rosefire;
 import edu.rosehulman.rosefire.RosefireResult;
 
