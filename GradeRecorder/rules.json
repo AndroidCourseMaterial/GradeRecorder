@@ -1,0 +1,80 @@
+{
+  "rules": {
+    "assignments": {
+      "$assignment": {
+        ".validate": "newData.hasChildren(['courseKey', 'maxGrade', 'name'])",
+        "courseKey": {
+          ".validate": "newData.isString()"
+        },
+        "maxGrade": {
+          ".validate": "newData.isNumber() && newData.val() >= 0"
+        },
+        "name": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    "courses": {
+      "$course": {
+        ".validate": "newData.hasChildren(['name'])",
+        "name": {
+          ".validate": "newData.isString()"
+        },
+        "owners": {
+          "$key1": {
+            ".validate": "newData.isBoolean()"
+          },
+          ".validate": "newData.hasChildren()"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    "students": {
+      "$student": {
+        ".validate": "newData.hasChildren(['courseKey', 'firstName', 'lastName', 'roseUserName'])",
+        "courseKey": {
+          ".validate": "newData.isString()"
+        },
+        "firstName": {
+          ".validate": "newData.isString()"
+        },
+        "lastName": {
+          ".validate": "newData.isString()"
+        },
+        "roseUserName": {
+          ".validate": "newData.isString() && newData.val().length <= 8"
+        },
+        "team": {
+          ".validate": "newData.isString()"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    "owners": {
+      "$owner": {
+        ".validate": "newData.hasChildren(['username'])",
+        "username": {
+          ".validate": "newData.isString()"
+        },
+        "courses": {
+          "$key1": {
+            ".validate": "newData.isBoolean()"
+          },
+          ".validate": "newData.hasChildren()"
+        },
+        "$other": {
+          ".validate": "false"
+        }
+      }
+    },
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
