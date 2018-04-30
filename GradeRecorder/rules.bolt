@@ -28,7 +28,7 @@ type Student {
 	courseKey: Key,
 	firstName: String,
 	lastName: String,
-	roseUserName: RoseUsername,
+	roseUsername: RoseUsername,
 	team: String | Null
 }
 

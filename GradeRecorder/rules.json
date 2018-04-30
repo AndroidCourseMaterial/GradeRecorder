@@ -36,7 +36,7 @@
     },
     "students": {
       "$student": {
-        ".validate": "newData.hasChildren(['courseKey', 'firstName', 'lastName', 'roseUserName'])",
+        ".validate": "newData.hasChildren(['courseKey', 'firstName', 'lastName', 'roseUsername'])",
         "courseKey": {
           ".validate": "newData.isString()"
         },
@@ -46,7 +46,7 @@
         "lastName": {
           ".validate": "newData.isString()"
         },
-        "roseUserName": {
+        "roseUsername": {
           ".validate": "newData.isString() && newData.val().length <= 8"
         },
         "team": {
